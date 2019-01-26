@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Averia+Sans+Libre|Happy+Monkey|Megrim');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+h1 {
+    font-family: 'Megrim', cursive;
+    text-align: center;
+}
+
+li a{
+    text-decoration: none;
+    font-family: 'Averia Sans Libre', cursive;
+    color: orangered;
+}
+
+ul {
+    margin: 10px 0;
+}
+
+a:hover {
+    color: blue;
+}
+
+img {
+    width: 250px;
+    height: 200px;
+    float: right;
+}
+
+#home-img {
+    height: 180px;
+    width: 110px;
+    position: relative;
+    top: 70px;
+}
