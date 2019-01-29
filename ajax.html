@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Through AJAX</title>
+
+</head>
+
+<body>
+    <h2>Requesting a JSON file through AJAX</h2>
+    <div>
+        <h3>AJAX Basics</h3>
+        <h4>What is AJAX?</h4>
+        <ul>
+            <li>Stands for <b>A</b>synchronous <b>J</b>avaScript <b>A</b>nd <b>X</b>ML</li>
+            <li>Not a programming language</li>
+            <li>Uses JavaScript and HTML DOM to display/use data</li>
+            <li>Also uses a browser built in object to request data from a web server</li>
+            <li>File it's requesting must be on the same server</li>
+            <li>Although the "X" stands for XML, JSON is more frequently used because it's more convenient</li>
+        </ul>
+    </div>
+    <div>
+        <h4>Why use it?</h4>
+        <ul>
+            <li>Use it to update parts of a webpage without reloading the whole thing</li>
+        </ul>
+    </div>
+    <div>
+        <h3>How to use AJAX</h3>
+        <h4>XMLHttpRequest Object</h4>
+        <p>All modern browsers support the object. To create an XMLHttpRequest object: <br><br> var xmlhttp = new XMLHttpRequest&#40;&#41;;</p>
+        <h4>Use it in a function</h4>
+        <p>function json&#40;&#41; &#123;</p>
+        <p style="margin-left: 20px">var url &#61; "data.json";<br><br>var http = new XMLHttpRequest&#40;&#41;;<br><br>http.onreadystatechange = function&#40;&#41; &#123;<br></p>
+        <p style="margin-left: 40px">if &#40;this.readyState &#61;&#61; 4 &amp;&amp; this.status &#61;&#61; 200 &#41; &#123;</p>
+        <p style="margin-left: 40px">var data &#61; JSON.parse&#40;this.responseText&#41;;</p>
+        <p style="margin-left: 40px">document.getElementById&#40;"gem"&#41;.innterHTML &#61; data.gem;</p>
+        <p style="margin-left: 40px">document.getElementById&#40;"color"&#41;.innerHTML &#61; data.color;</p>
+        <p style="margin-left: 40px">&#125;</p>
+        <p>&#125;</p>
+        <p>http.open&#40;"GET", url, true&#41;;<br>http.send&#40;&#41;;</p>
+    </div>
+    <table class="src">
+        <tr>
+            <th>Gem</th>
+            <th>Color</th>
+        </tr>
+        <tr>
+            <td>
+                <div id="gem">Onyx</div>
+            </td>
+            <td>
+                <div id="color">Black</div>
+            </td>
+        </tr>
+    </table>
+
+
+    <div>
+        <button type="button" onclick="json()">Update</button>
+    </div>
+</body>
+<script src="ajax.js"></script>
+
+</html>
